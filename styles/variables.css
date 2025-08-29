@@ -29,10 +29,14 @@
      --title-size:clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
      --margin-header:clamp(6.125rem, 6.294rem + -0.188vw, 6.25rem);
      --padding-header:clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem);
+     --button-save-size:clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
      
      --border-color:#000;
+     --watermark-border:#fff;
+
      --heart-contour:#000;
+     --heart-hover:#000;
      --sparks-color:#FF0000;
-     --animation-fill-color:#FF0000;
+     --heart-active:#FF0000;
 
 } 

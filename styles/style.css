@@ -84,17 +84,24 @@
   top: 25px;
   right: 25px;
   opacity: 50%;
-  color: #fff;
   color: #000;
   font-family: var(--font-accent);
   font-size: 14px;
-  -webkit-text-stroke: 1px #fff;
   mix-blend-mode: hard-light;
+   text-shadow:
+  -1px 0 var(--watermark-border), 
+  0 1px var(--watermark-border), 
+  1px 0 var(--watermark-border), 
+  0 -1px var(--watermark-border);
 }
 
-@supports (-webkit-text-stroke) {
-  text-shadow: ;
-}
+@supports((text-stroke: 1px var(--watermark-border)) or (-webkit-text-stroke: 1px var(--watermark-border))) {
+  .watermark{
+    -webkit-text-stroke:1px var(--watermark-border);
+    text-stroke: 1px var(--watermark-border);
+    text-shadow: none;
+  }
+} 
 
 .card__content {
   display: flex;
@@ -110,7 +117,7 @@
 
 .card__buttons {
   display: flex;
-  gap: 12px;
+  gap: 4px;
   margin-left: auto;
 }
 
@@ -119,15 +126,24 @@
 }
 
 .card__icon-button {
-  width: 39px;
-  height: 36px;
+  all: unset;
+  padding: 0;
   border: 2px solid transparent;
+  width: 43px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+border: 2px solid var(--border-color);
+outline: none;
 }
 
 .card__like-button {
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--border-color);
+  background-color: #fff;
   min-block-size: 38px;
   min-inline-size: 130px;
 }
@@ -136,4 +152,49 @@
   font-family: var(--font-accent);
   font-size: 14px;
   line-height: 90%;
+  position: relative;
+  z-index: 1;
+  min-width: 266px;
 }
+
+.save__button{
+  display: flex;
+  inline-size: var(--button-save-size);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 17px 20px;
+  margin: auto;
+  block-size: 55px;
+  background-color: #fff;
+}
+
+.icon__diskette {
+  width: 21px;
+  height: 21px;
+}
+
+.button:focus {
+box-shadow: 2px 2px 0 var(--border-color);
+transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+ content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__icon-button:focus-visible{
+  border: 2px solid var(--border-color);
+  transition: border 0.3s ease;
+}
+
