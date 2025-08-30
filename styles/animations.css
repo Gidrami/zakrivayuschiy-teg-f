@@ -25,6 +25,7 @@
 }
 100% {
   fill: var(--sparks-color);
+  opacity: initial;
 }
 }
 

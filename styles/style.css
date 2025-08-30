@@ -50,9 +50,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 54px;
   margin-inline: auto;
   inline-size: var(--content-size);
+  margin-bottom: 100px;
 }
 
 .card {
@@ -70,13 +71,15 @@
 .card__image {
   position: relative;
   display: flex;
+  block-size: var(--image-block-size);
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .image {
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
-  block-size: auto;
 }
 
 .watermark {
@@ -107,7 +110,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 25px;
+  padding: 27px 25px 25px;
 }
 
 .card__text {
@@ -119,6 +122,7 @@
   display: flex;
   gap: 4px;
   margin-left: auto;
+  margin-right: 2px;
 }
 
 .sparks {
@@ -130,22 +134,28 @@
   padding: 0;
   border: 2px solid transparent;
   width: 43px;
-  height: 34px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.like-icon{
+  outline: none;
 }
 
 .button {
   position: relative;
 border: 2px solid var(--border-color);
 outline: none;
+color: #fff;
+background-color: #fff;
 }
 
 .card__like-button {
-  background-color: #fff;
   min-block-size: 38px;
   min-inline-size: 130px;
+  padding-top: 4px;
 }
 
 .button__text {
@@ -155,6 +165,7 @@ outline: none;
   position: relative;
   z-index: 1;
   min-width: 266px;
+  mix-blend-mode: difference;
 }
 
 .save__button{
@@ -166,12 +177,15 @@ outline: none;
   padding: 17px 20px;
   margin: auto;
   block-size: 55px;
-  background-color: #fff;
+  
 }
 
 .icon__diskette {
+  flex-shrink: 0;
   width: 21px;
   height: 21px;
+  mix-blend-mode: difference;
+  color: #fff;
 }
 
 .button:focus {
@@ -198,3 +212,38 @@ transition: box-shadow 0.3s ease;
   transition: border 0.3s ease;
 }
 
+.save__dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.save__dialog{
+inline-size: var(--dialog-size);
+padding: 30px;
+}
+
+.dialog__content{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__diskette__dialog{
+width: 40px;
+flex-shrink: 0;
+color: #000;
+}
+
+.dialog__title {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__button{
+  inline-size: 100%;
+  min-block-size:38px;
+  margin-top: 28px;
+}

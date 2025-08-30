@@ -30,7 +30,9 @@
      --margin-header:clamp(6.125rem, 6.294rem + -0.188vw, 6.25rem);
      --padding-header:clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem);
      --button-save-size:clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
-     
+     --dialog-size:clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
+--image-block-size:clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
+
      --border-color:#000;
      --watermark-border:#fff;
 
