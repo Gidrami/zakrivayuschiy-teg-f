@@ -205,7 +205,6 @@
   margin: auto;
   padding: 17px 20px;
   inline-size: var(--button-save-size);
-  block-size: var(--button-save-block);
   block-size: 55px;
 }
 
