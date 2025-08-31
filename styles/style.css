@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 54px;
+  gap: 50px;
   margin-inline: auto;
   inline-size: var(--content-size);
   margin-bottom: 100px;
@@ -80,6 +80,35 @@
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  block-size: auto;
+}
+
+.filter__blur{
+filter: blur(7px);
+}
+
+.filter__hue-rotate{
+  filter: hue-rotate(160deg);
+}
+
+.filter__opasity{
+  filter: opacity(70%) saturate(150%) hue-rotate(180deg);
+}
+
+.filter__saturate{
+   filter: saturate(80%) hue-rotate(300deg);
+}
+
+.filter__invert{
+filter: invert(70%) brightness(50%);
+}
+
+.filter__grayscale{
+  filter: grayscale(50%);
+}
+
+.filter__sepia{
+  filter: sepia(100%) brightness(150%);
 }
 
 .watermark {
@@ -120,7 +149,6 @@
 
 .card__buttons {
   display: flex;
-  gap: 4px;
   margin-left: auto;
   margin-right: 2px;
 }
@@ -176,7 +204,7 @@ background-color: #fff;
   gap: 8px;
   padding: 17px 20px;
   margin: auto;
-  block-size: 55px;
+  block-size: var(--button-save-block);
   
 }
 
@@ -205,6 +233,7 @@ transition: box-shadow 0.3s ease;
 
 .button:hover::before {
   transform: scaleX(1);
+  
 }
 
 .card__icon-button:focus-visible{
@@ -246,4 +275,22 @@ color: #000;
   inline-size: 100%;
   min-block-size:38px;
   margin-top: 28px;
+}
+
+
+@media (width<=375px){
+
+.save__dialog{
+  padding: 30px 38px;
+}
+
+.save__button{
+  flex-direction: column;
+}
+
+.icon__diskette {
+  width: 28px;
+  height: 28px;
+}
+
 }
