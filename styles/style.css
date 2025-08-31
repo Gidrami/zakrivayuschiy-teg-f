@@ -51,9 +51,9 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  margin-bottom: 100px;
   margin-inline: auto;
   inline-size: var(--content-size);
-  margin-bottom: 100px;
 }
 
 .card {
@@ -71,9 +71,9 @@
 .card__image {
   position: relative;
   display: flex;
-  block-size: var(--image-block-size);
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
+  block-size: var(--image-block-size);
 }
 
 .image {
@@ -83,31 +83,31 @@
   block-size: auto;
 }
 
-.filter__blur{
-filter: blur(7px);
+.filter__blur {
+  filter: blur(7px);
 }
 
-.filter__hue-rotate{
+.filter__hue-rotate {
   filter: hue-rotate(160deg);
 }
 
-.filter__opasity{
+.filter__opasity {
   filter: opacity(70%) saturate(150%) hue-rotate(180deg);
 }
 
-.filter__saturate{
-   filter: saturate(80%) hue-rotate(300deg);
+.filter__saturate {
+  filter: saturate(80%) hue-rotate(300deg);
 }
 
-.filter__invert{
-filter: invert(70%) brightness(50%);
+.filter__invert {
+  filter: invert(70%) brightness(50%);
 }
 
-.filter__grayscale{
+.filter__grayscale {
   filter: grayscale(50%);
 }
 
-.filter__sepia{
+.filter__sepia {
   filter: sepia(100%) brightness(150%);
 }
 
@@ -119,21 +119,21 @@ filter: invert(70%) brightness(50%);
   color: #000;
   font-family: var(--font-accent);
   font-size: 14px;
+  text-shadow: -1px 0 var(--watermark-border), 0 1px var(--watermark-border),
+    1px 0 var(--watermark-border), 0 -1px var(--watermark-border);
   mix-blend-mode: hard-light;
-   text-shadow:
-  -1px 0 var(--watermark-border), 
-  0 1px var(--watermark-border), 
-  1px 0 var(--watermark-border), 
-  0 -1px var(--watermark-border);
 }
 
-@supports((text-stroke: 1px var(--watermark-border)) or (-webkit-text-stroke: 1px var(--watermark-border))) {
-  .watermark{
-    -webkit-text-stroke:1px var(--watermark-border);
-    text-stroke: 1px var(--watermark-border);
+@supports (
+  (text-stroke: 1px var(--watermark-border)) or
+    (-webkit-text-stroke: 1px var(--watermark-border))
+) {
+  .watermark {
     text-shadow: none;
+    -webkit-text-stroke: 1px var(--watermark-border);
+    text-stroke: 1px var(--watermark-border);
   }
-} 
+}
 
 .card__content {
   display: flex;
@@ -149,8 +149,9 @@ filter: invert(70%) brightness(50%);
 
 .card__buttons {
   display: flex;
-  margin-left: auto;
   margin-right: 2px;
+  margin-left: auto;
+  gap: 4px;
 }
 
 .sparks {
@@ -158,85 +159,88 @@ filter: invert(70%) brightness(50%);
 }
 
 .card__icon-button {
-  all: unset;
-  padding: 0;
-  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 43px;
   height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px solid transparent;
+  padding: 0;
+  all: unset;
 }
 
-.like-icon{
+.like-icon {
   outline: none;
 }
 
 .button {
   position: relative;
-border: 2px solid var(--border-color);
-outline: none;
-color: #fff;
-background-color: #fff;
+  border: 2px solid var(--border-color);
+  outline: none;
+  color: #fff;
+  background-color: #fff;
 }
 
 .card__like-button {
+  padding-top: 4px;
   min-block-size: 38px;
   min-inline-size: 130px;
-  padding-top: 4px;
 }
 
 .button__text {
-  font-family: var(--font-accent);
-  font-size: 14px;
-  line-height: 90%;
   position: relative;
   z-index: 1;
   min-width: 266px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 90%;
   mix-blend-mode: difference;
 }
 
-.save__button{
+.save__button {
   display: flex;
-  inline-size: var(--button-save-size);
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 17px 20px;
   margin: auto;
+  padding: 17px 20px;
+  inline-size: var(--button-save-size);
   block-size: var(--button-save-block);
-  
+  block-size: 55px;
 }
 
 .icon__diskette {
   flex-shrink: 0;
   width: 21px;
   height: 21px;
-  mix-blend-mode: difference;
   color: #fff;
+  mix-blend-mode: difference;
 }
 
 .button:focus {
-box-shadow: 2px 2px 0 var(--border-color);
-transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0 var(--border-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
- content: "";
+  content: "";
   position: absolute;
   inset: 0;
   background: #000;
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::before {
   transform: scaleX(1);
-  
 }
 
-.card__icon-button:focus-visible{
+.button:hover {
+  cursor: pointer;
+}
+
+.card__icon-button:focus-visible {
   border: 2px solid var(--border-color);
   transition: border 0.3s ease;
 }
@@ -245,22 +249,22 @@ transition: box-shadow 0.3s ease;
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.save__dialog{
-inline-size: var(--dialog-size);
-padding: 30px;
+.save__dialog {
+  padding: 30px;
+  inline-size: var(--dialog-size);
 }
 
-.dialog__content{
+.dialog__content {
   display: flex;
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-.icon__diskette__dialog{
-width: 40px;
-flex-shrink: 0;
-color: #000;
+.icon__diskette__dialog {
+  flex-shrink: 0;
+  width: 40px;
+  color: #000;
 }
 
 .dialog__title {
@@ -271,26 +275,24 @@ color: #000;
   text-transform: uppercase;
 }
 
-.dialog__button{
-  inline-size: 100%;
-  min-block-size:38px;
+.dialog__button {
   margin-top: 28px;
+  inline-size: 100%;
+  min-block-size: 38px;
 }
 
+@media (width<=375px) {
+  .save__dialog {
+    padding: 30px 38px;
+  }
 
-@media (width<=375px){
+  .save__button {
+    flex-direction: column;
+    block-size: 84px;
+  }
 
-.save__dialog{
-  padding: 30px 38px;
-}
-
-.save__button{
-  flex-direction: column;
-}
-
-.icon__diskette {
-  width: 28px;
-  height: 28px;
-}
-
+  .icon__diskette {
+    width: 28px;
+    height: 28px;
+  }
 }

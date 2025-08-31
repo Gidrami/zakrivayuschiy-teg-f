@@ -1,10 +1,10 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
---font-main: Inter, sans-serif;
---font-accent: PressStart2P, cursive;
---main-article-weight: 410;
---main-title-weight:715;
---page-background: repeating-linear-gradient(
+  --font-main: Inter, sans-serif;
+  --font-accent: PressStart2P, cursive;
+  --main-article-weight: 410;
+  --main-title-weight: 715;
+  --page-background: repeating-linear-gradient(
       to right,
       #d3d3d3 0,
       #d3d3d3 2px,
@@ -18,28 +18,22 @@
       transparent 2px,
       transparent 4px
     ),
-    linear-gradient(
-      to bottom,
-      #e7e7e7 0.01%,
-      #1a1a1a 100%
-    );
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
-     --content-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
-     --logo-size:clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
-     --title-size:clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
-     --margin-header:clamp(6.125rem, 6.294rem + -0.188vw, 6.25rem);
-     --padding-header:clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem);
-     --button-save-size:clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
-     --dialog-size:clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
---image-block-size:clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
---button-save-block:clamp(5.25rem, 5.888rem + -2.723vw, 3.438rem);
+  --content-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  --logo-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+  --title-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  --margin-header: clamp(6.125rem, 6.294rem + -0.188vw, 6.25rem);
+  --padding-header: clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem);
+  --button-save-size: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
+  --dialog-size: clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
+  --image-block-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
 
-     --border-color:#000;
-     --watermark-border:#fff;
+  --border-color: #000;
+  --watermark-border: #fff;
 
-     --heart-contour:#000;
-     --heart-hover:#000;
-     --sparks-color:#FF0000;
-     --heart-active:#FF0000;
-
-} 
+  --heart-contour: #000;
+  --heart-hover: #000;
+  --sparks-color: #ff0000;
+  --heart-active: #ff0000;
+}
