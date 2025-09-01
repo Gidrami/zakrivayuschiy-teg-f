@@ -11,8 +11,9 @@
 */
 
 .page {
-  font-family: var(--font-main);
+  font-family: var(--font-main),sans-serif;
   background-image: var(--page-background);
+  background-attachment: fixed;
   background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -38,6 +39,7 @@
 
 .logo {
   font-size: var(--logo-size);
+  text-transform:uppercase;
 }
 
 .title {
@@ -216,7 +218,7 @@
   mix-blend-mode: difference;
 }
 
-.button:focus {
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--border-color);
   transition: box-shadow 0.3s ease;
 }
@@ -278,6 +280,7 @@
   margin-top: 28px;
   inline-size: 100%;
   min-block-size: 38px;
+  text-transform: uppercase;
 }
 
 @media (width<=375px) {
